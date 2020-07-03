@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMSLookupApi", "CMSLookupApi\CMSLookupApi.csproj", "{26E694FD-132A-4F71-B02E-79AA304550FE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26E694FD-132A-4F71-B02E-79AA304550FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26E694FD-132A-4F71-B02E-79AA304550FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26E694FD-132A-4F71-B02E-79AA304550FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26E694FD-132A-4F71-B02E-79AA304550FE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F712FFA-7A01-4F1D-AE0A-B18BA5811131}
+	EndGlobalSection
+EndGlobal
