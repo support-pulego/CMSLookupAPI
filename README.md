@@ -2,7 +2,7 @@
 
 ## Managed Care Organisation
 - Get Accredited Medical  Care Organisations list
- `api/managedcareorganisations` 
+ `api/managedcareorganisations`
 - Get  MCO Service by MCO ID
   `api/managedcareorganisations/mcoservice/{id}`
 - Get MCO conditions by mco id and comply period
@@ -32,7 +32,7 @@
  `api/ifrsadvisors/{id}`
  ## Medical Schemes
  - GET All medical Schemes
- `api/medschemes`
+ `api/medschemes` OR `api/medschemes?filterBy=A`
  - GET medical schemes by ID
  `api/medschemes/{id}`
  
