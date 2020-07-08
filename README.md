@@ -10,7 +10,7 @@
   
 ## Accredited medical scheme administrators
 - GET Accredited medical scheme administrators list
-`api/accrediatedmedschemeadministators`
+`api/accrediatedmedschemeadministrators`
 - GET Accredited medical scheme conditions
 `api/accrediatedmedschemeadministators/{ifkAdminID}`
 
