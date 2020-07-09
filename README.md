@@ -42,7 +42,7 @@
 - Complaint against categories
 `api/sp-web-complaint/against-categories`
 - Complaint By categories
-`api/sp-web-complaint/by-cotegories`
+`api/sp-web-complaint/by-categories`
 - SP province
 `api/sp-web-complaint/sp-province`
 - SP Scheme benefit options
