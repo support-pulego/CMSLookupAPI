@@ -57,8 +57,8 @@
 
 - Step no.1: Run build solutions and Publish Web. Then click publish.
 - Step no.2: Then click target directory, the file explorer will open, then select all files excluding appsetting.json file. 
-- Step no.3: Then create zip file, then after copy the zip file to the server where IIS is installed.
-- Step no.4 Then paste it in Downloads then open the zip file, Then copy all the files to IIS WWWRoot folder.
-- Step no.5 Then paste the zip content there, then after that stop and start the web app in IIS.
+- Step no.3: Then create zip file, therefore copy the zip file to the server where IIS is installed.
+- Step no.4 Then paste it in Downloads then open the zip file, Therefore copy all the files to IIS WWWRoot folder.
+- Step no.5 Then paste the zip content there, therefore after that stop and start the web app in IIS.
 
-Done with your deployments now you should be able to view the web via the domain.
+Done with your deployments now you should be able to view the web via the server domain name.
