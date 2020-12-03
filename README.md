@@ -2,55 +2,55 @@
 
 ## Managed Care Organisation
 - Get Accredited Medical  Care Organisations list
- `api/managedcareorganisations`
+ `/managedcareorganisations`
 - Get  MCO Service by MCO ID
-  `api/managedcareorganisations/mcoservice/{id}`
+  `/managedcareorganisations/mcoservice/{id}`
 - Get MCO conditions by mco id and comply period
-  `api/managedcareorganisations/{ifkmcoid}/{complyperiod}`
+  `/managedcareorganisations/{ifkmcoid}/{complyperiod}`
   
 ## Accredited medical scheme administrators
 - GET Accredited medical scheme administrators list
-`api/accrediatedmedschemeadministrators`
+`/accrediatedmedschemeadministrators`
 - GET Accredited medical scheme conditions
-`api/accrediatedmedschemeadministrators/{ifkAdminID}`
+`/accrediatedmedschemeadministrators/{ifkAdminID}`
 
 ## Auditors
 - GET Auditors
-`api/auditor`
+`/auditor`
 
 ## Audit firms
 - GET Auditfirm list
-`api/auditfirm`
+`/auditfirm`
 - GET Auiditfirm by ID
- `api/auditfirm/{id}`
+ `/auditfirm/{id}`
  - GET Auditfirm Conditions by auditfirm ID
- `api/auditfirm/conditions/{id}`
+ `/auditfirm/conditions/{id}`
  ## IFRS Advisors
  - GET IFRS Advisors list
- `api/ifrsadvisors`
+ `/ifrsadvisors`
  - GET IFRS Advisors by id 
- `api/ifrsadvisors/{id}`
+ `/ifrsadvisors/{id}`
  ## Medical Schemes
  - GET All medical Schemes
- `api/medschemes` OR `api/medschemes?filterBy=A`
+ `/medschemes` OR `api/medschemes?filterBy=A`
  - GET medical schemes by ID
- `api/medschemes/{id}`
+ `/medschemes/{id}`
  
  ## SP Complaints
 - Create complaint
-`api/sp-web-complaint`
+`/sp-web-complaint`
 - Complaint against categories
-`api/sp-web-complaint/against-categories`
+`/sp-web-complaint/against-categories`
 - Complaint By categories
-`api/sp-web-complaint/by-categories`
+`/sp-web-complaint/by-categories`
 - SP province
-`api/sp-web-complaint/sp-province`
+`/sp-web-complaint/sp-province`
 - SP Scheme benefit options
-`api/sp-web-complaint/sp-scheme-benefit-options/{entityid}`
+`/sp-web-complaint/sp-scheme-benefit-options/{entityid}`
 - SP Title
-`api/sp-web-complaint/sp-title`
+`/sp-web-complaint/sp-title`
 - Entity List by Category
-`api/sp-web-complaint/entity-list-by-category/{entitytypeid}`
+`/sp-web-complaint/entity-list-by-category/{entitytypeid}`
 
 # Deployment steps
 ## Steps to follow when deploying to IIS after running the build and publishing web successful.
