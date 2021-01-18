@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CMSLookupApi.Models;
-using Microsoft.AspNetCore.Http;
+﻿using CMSLookupApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CMSLookupApi.Controllers
 {
-    [Route("api/publications")]
+    [Route("publications")]
     [ApiController]
     public class PublicationsController : ControllerBase
     {

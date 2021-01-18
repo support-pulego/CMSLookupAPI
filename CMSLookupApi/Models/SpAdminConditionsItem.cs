@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace CMSLookupApi.Models
 {
     public class SpAdminConditionsItem
     {
         [Key]
+        [JsonPropertyName("Condition Number")]
         public string sConditionNo { get; set; }
-        public string ParentID { get; set;}
+        public string ParentID { get; set; }
+        [JsonPropertyName("Description Address")]
         public string sDescription { get; set; }
-        public int Version	{get; set;}
+        public int Version { get; set; }
     }
 }

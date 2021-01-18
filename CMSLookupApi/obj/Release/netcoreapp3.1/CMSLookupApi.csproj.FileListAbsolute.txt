@@ -1,6 +1,5 @@
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\appsettings.Development.json
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\appsettings.json
-C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\CMSLookupApi.exe
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\CMSLookupApi.deps.json
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\CMSLookupApi.runtimeconfig.json
@@ -132,7 +131,6 @@ C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\CMSLookupApi.csprojAssemblyReference.cache
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\CMSLookupApi.csproj.CoreCompileInputs.cache
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\CMSLookupApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\CMSLookupApi.AssemblyInfoInputs.cache
@@ -144,3 +142,5 @@ C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\CMSLookupApi.dll
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\CMSLookupApi.pdb
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\CMSLookupApi.genruntimeconfig.cache
+C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\CMSLookupApi.csprojAssemblyReference.cache
+C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Release\netcoreapp3.1\scopedcss\bundle\CMSLookupApi.styles.css

@@ -8,6 +8,6 @@ namespace CMSLookupApi.Models
         {
 
         }
-        public DbSet<PublicationItem> Publications {get; set;}
+        public DbSet<PublicationItem> Publications { get; set; }
     }
 }

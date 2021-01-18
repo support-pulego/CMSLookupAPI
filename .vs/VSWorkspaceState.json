@@ -5,6 +5,6 @@
     "\\CMSLookupApi\\Controllers",
     "\\CMSLookupApi\\Models"
   ],
-  "SelectedNode": "\\CMSLookupApi\\Controllers\\ComplaintController.cs",
+  "SelectedNode": "\\CMSLookupApi\\CMSLookupApi.csproj",
   "PreviewInSolutionExplorer": false
 }

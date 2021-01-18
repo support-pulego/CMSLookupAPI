@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using CMSLookupApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using CMSLookupApi.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CMSLookupApi.Controllers
 {
-    [Route("api/news")]
+    [Route("news")]
     [ApiController]
     public class NewsItemsController : ControllerBase
     {

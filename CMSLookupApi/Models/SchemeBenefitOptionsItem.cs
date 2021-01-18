@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CMSLookupApi.Models
 {
     public class SchemeBenefitOptionsItem
     {
-        
+        [Key]
+       public int BenefitOptionId { get; set; }
+       public string BenefitName { get; set; }
     }
 }

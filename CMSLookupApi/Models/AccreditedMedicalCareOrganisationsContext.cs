@@ -1,8 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CMSLookupApi.Models
 {
@@ -17,5 +13,6 @@ namespace CMSLookupApi.Models
         public DbSet<AccreditedMedicalCareOrganisationsItem> AccreditedMadicalCareOrg { get; set; }
 
         public DbSet<MCOServicesItem> MCOServices { get; set; }
+        public DbSet<MCOServicesDetailItem> MCOServicesDetail { get; set; }
     }
 }

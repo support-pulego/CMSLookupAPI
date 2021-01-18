@@ -10,6 +10,8 @@ namespace CMSLookupApi.Models
 
         }
 
+        public DbSet<MedschemeListItem> MedschemesList { get; set; }
         public DbSet<MedschemeItem> Medschemes { get; set; }
+        public DbSet<MedschemeDetailItem> MedschemesRef { get; set; }
     }
 }

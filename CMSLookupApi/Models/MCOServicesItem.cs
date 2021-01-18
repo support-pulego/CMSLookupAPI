@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace CMSLookupApi.Models
 {
@@ -10,15 +7,15 @@ namespace CMSLookupApi.Models
     {
         [Key]
         public int ipkServicesId { get; set; }
-        public int ifkMCOServicesID { get; set; }
-        public int ifkMCOID { get; set; }
-        public string bActive { get; set; }
         public int ipkMCOServicesID { get; set; }
+        [JsonPropertyName("Short Description")]
         public string sShortDescription { get; set; }
+        [JsonPropertyName("Description")]
         public string sDescription { get; set; }
-        public string bIsGroupHeader { get; set; }
-        public string bIsSubItem { get; set; }
-        public string iIsSubItemFor { get; set; }
-        public string iOrder { get; set; }
+        public bool bIsGroupHeader { get; set; }
+        public bool bIsSubItem { get; set; }
+        public int? iIsSubItemFor { get; set; }
+        public bool bActive { get; set; }
+        public int? iOrder { get; set; }
     }
 }

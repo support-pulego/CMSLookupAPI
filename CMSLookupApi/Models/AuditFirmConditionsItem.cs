@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace CMSLookupApi.Models
 {
@@ -10,8 +8,10 @@ namespace CMSLookupApi.Models
     {
         [Key]
         public Guid AuditFirmID { get; set; }
+        [JsonPropertyName("Audit Firm")]
         public string AuditFirm { get; set; }
-        public string ConditionID { get; set; }
+        public Guid ConditionID { get; set; }
+        [JsonPropertyName("Description")]
         public string Description { get; set; }
     }
 }

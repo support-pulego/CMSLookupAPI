@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace CMSLookupApi.Models
 {
@@ -8,6 +7,6 @@ namespace CMSLookupApi.Models
         [Key]
         public int CategoryID { get; set; }
         public string Category { get; set; }
-       
+
     }
 }

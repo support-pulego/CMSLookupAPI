@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Threading.Tasks;
-using CMSLookupApi.Models;
+﻿using CMSLookupApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CMSLookupApi.Controllers
 {
-    [Route("api/sp-web-complaint")]
+    [Route("complaint")]
     [ApiController]
     public class ComplaintController : ControllerBase
     {
@@ -21,78 +22,132 @@ namespace CMSLookupApi.Controllers
         }
 
         [HttpPost]
-        public int CreateSpComplaint([FromBody] SpComplaintItem complaintItem)
+        public async Task<ActionResult<IEnumerable<ComplaintResponseItem>>> CreateSpComplaint([FromBody] SpComplaintItem complaintItem)
+        //public ComplaintResponseItem[] CreateSpComplaint([FromBody] SpComplaintItem complaintItem)
         {
-            var EntitypeIDAgainst = new SqlParameter("@EntitypeIDAgainst", complaintItem.EntitypeIDAgainst);
 
-            var EntityIDAgainst = new SqlParameter("@EntityIDAgainst", complaintItem.EntityIDAgainst);
+            var schemeEntityIDPrivateMember = (object)complaintItem.SchemeEntityIDPrivateMember ?? DBNull.Value;
+            var entityTypeIDMember = (object)complaintItem.EntityTypeIDMember ?? DBNull.Value;
+            var primaryNoMember = (object)complaintItem.EntityIDMember ?? DBNull.Value;
+            var benefitoptionIDAgainst = (object)complaintItem.BenefitoptionIDAgainst ?? DBNull.Value;
+            var provinceIDMember = (object)complaintItem.ProvinceIDMember ?? DBNull.Value;
+            var titleIDMember = (object)complaintItem.TitleIDMember ?? DBNull.Value;
+            var titleIDComplainant = (object)complaintItem.TitleIDComplainant ?? DBNull.Value;
+            var provinceIDComplainant = (object)complaintItem.ProvinceIDComplainant ?? DBNull.Value;
 
-            var BenefitoptionIDAgainst = new SqlParameter("@BenefitoptionIDAgainst", complaintItem.BenefitoptionIDAgainst);
+            return await _context.SpCompliant.FromSqlRaw("EXECUTE website.spI_Web_Complaint " +
+                "@EntitypeIDAgainst, " +
+                "@PrimaryNo, " +
+                "@BenefitoptionIDAgainst, " +
+                "@EntityTypeIDMember, " +
+                "@PrimaryNoMember, " +
+                "@MembershipNrMember, " +
+                "@SchemeEntityIDPrivateMember, " +
+                "@PracticeNameMember, " +
+                "@FNameMember, " +
+                "@LNameMember, " +
+                "@TitleIDMember, " +
+                "@PostalAdressMember, " +
+                "@PostalSuburbMember, " +
+                "@PostalBuildingMember, " +
+                "@PostalCodeMember, " +
+                "@CityMember, " +
+                "@ProvinceIDMember, " +
+                "@TelnumberMember, " +
+                "@CellnumberMember, " +
+                "@EmailMember, " +
+                "@FNameComplainant, " +
+                "@LNameComplainant, " +
+                "@TitleIDComplainant, " +
+                "@PostalAdressComplainant, " +
+                "@PostalSuburbComplainant , " +
+                "@PostalBuildingComplainant , " +
+                "@PostalCodeComplainant, " +
+                "@CityComplainant, " +
+                "@ProvinceIDComplainant, " +
+                "@TelnumberComplainant, " +
+                "@CellnumberComplainant, " +
+                "@EmailComplainant, " +
+                "@complaintFacts, " +
+                "@complaintDisputeResFollowed, " +
+                "@complaintRecourseRequired, " +
+                "@AttachmentLocation",
+                new SqlParameter("EntitypeIDAgainst", complaintItem.EntitypeIDAgainst),
+                new SqlParameter("PrimaryNo", complaintItem.EntityIDAgainst),
+                new SqlParameter("BenefitoptionIDAgainst", benefitoptionIDAgainst),
+                new SqlParameter("EntityTypeIDMember", entityTypeIDMember),
+                new SqlParameter("PrimaryNoMember", primaryNoMember),
+                new SqlParameter("MembershipNrMember", complaintItem.MembershipNrMember),
+                new SqlParameter("SchemeEntityIDPrivateMember", schemeEntityIDPrivateMember),
+                new SqlParameter("PracticeNameMember", complaintItem.PracticeNameMember),
+                new SqlParameter("FNameMember", complaintItem.FNameMember),
+                new SqlParameter("LNameMember", complaintItem.LNameMember),
+                new SqlParameter("TitleIDMember", titleIDMember),
+                new SqlParameter("PostalAdressMember", complaintItem.PostalAdressMember),
+                new SqlParameter("PostalSuburbMember", complaintItem.PostalSuburbMember),
+                new SqlParameter("PostalBuildingMember", complaintItem.PostalBuildingMember),
+                new SqlParameter("PostalCodeMember", complaintItem.PostalCodeMember),
+                new SqlParameter("CityMember", complaintItem.CityMember),
+                new SqlParameter("ProvinceIDMember", provinceIDMember),
+                new SqlParameter("TelnumberMember", complaintItem.TelnumberMember),
+                new SqlParameter("CellnumberMember", complaintItem.CellnumberMember),
+                new SqlParameter("EmailMember", complaintItem.EmailMember),
+                new SqlParameter("FNameComplainant", complaintItem.FNameComplainant),
+                new SqlParameter("LNameComplainant", complaintItem.LNameComplainant),
+                new SqlParameter("TitleIDComplainant", titleIDComplainant),
+                new SqlParameter("PostalAdressComplainant", complaintItem.PostalAdressComplainant),
+                new SqlParameter("PostalSuburbComplainant", complaintItem.PostalSuburbComplainant),
+                new SqlParameter("PostalBuildingComplainant", complaintItem.PostalBuildingComplainant),
+                new SqlParameter("PostalCodeComplainant", complaintItem.PostalCodeComplainant),
+                new SqlParameter("CityComplainant", complaintItem.CityComplainant),
+                new SqlParameter("ProvinceIDComplainant", provinceIDComplainant),
+                new SqlParameter("TelnumberComplainant", complaintItem.TelnumberComplainant),
+                new SqlParameter("CellnumberComplainant", complaintItem.CellnumberComplainant),
+                new SqlParameter("EmailComplainant", complaintItem.EmailComplainant),
+                new SqlParameter("complaintFacts", complaintItem.ComplaintFacts),
+                new SqlParameter("complaintDisputeResFollowed", complaintItem.ComplaintDisputeResFollowed),
+                new SqlParameter("complaintRecourseRequired", complaintItem.ComplaintRecourseRequired),
+                new SqlParameter("AttachmentLocation", complaintItem.AttachmentLocation)).ToListAsync();
+            //var generator = new RandomGenerator();
+            //return new ComplaintResponseItem[] { new ComplaintResponseItem { isSuccess = true, Result = "Complaint registered successfully. Your reference number is CM755" + generator.RandomNumber(10, 100) } };
 
-            var EntityTypeIDMember = new SqlParameter("@EntityTypeIDMember", complaintItem.EntityTypeIDMember);
+        }
 
-            var EntityIDMember = new SqlParameter("@EntityIDMember", complaintItem.EntityIDMember);
+        public class RandomGenerator
+        {
+            // Instantiate random number generator.  
+            // It is better to keep a single Random instance 
+            // and keep using Next on the same instance.  
+            private readonly Random _random = new Random();
 
-            var MembershipNrMember = new SqlParameter("@MembershipNrMember", complaintItem.MembershipNrMember);
+            // Generates a random number within a range.      
+            public int RandomNumber(int min, int max)
+            {
+                return _random.Next(min, max);
+            }
 
-            var PracticeNameMember = new SqlParameter("@PracticeNameMember", complaintItem.PracticeNameMember);
+            // Generates a random string with a given size.    
+            public string RandomString(int size, bool lowerCase = false)
+            {
+                var builder = new StringBuilder(size);
 
-            var FNameMember = new SqlParameter("@FNameMember", complaintItem.FNameMember);
+                // Unicode/ASCII Letters are divided into two blocks
+                // (Letters 65–90 / 97–122):   
+                // The first group containing the uppercase letters and
+                // the second group containing the lowercase.  
 
-            var LNameMember = new SqlParameter("@LNameMember", complaintItem.LNameMember);
+                // char is a single Unicode character  
+                char offset = lowerCase ? 'a' : 'A';
+                const int lettersOffset = 26; // A...Z or a..z: length = 26  
 
-            var TitleIDMember = new SqlParameter("@TitleIDMember", complaintItem.TitleIDMember);
+                for (var i = 0; i < size; i++)
+                {
+                    var @char = (char)_random.Next(offset, offset + lettersOffset);
+                    builder.Append(@char);
+                }
 
-            var PostalAdressMember = new SqlParameter("@PostalAdressMember", complaintItem.PostalAdressMember);
-
-            var PostalSuburbMember = new SqlParameter("@PostalSuburbMember", complaintItem.PostalSuburbMember);
-
-            var PostalBuildingMember = new SqlParameter("@PostalBuildingMember", complaintItem.PostalBuildingMember);
-
-            var PostalCodeMember = new SqlParameter("@PostalCodeMember", complaintItem.PostalCodeMember);
-            
-            var CityMember = new SqlParameter("@CityMember", complaintItem.CityMember);
-
-            var ProvinceIDMember = new SqlParameter("@ProvinceIDMember", complaintItem.ProvinceIDMember);
-
-            var TelnumberMember = new SqlParameter("@TelnumberMember", complaintItem.TelnumberMember);
-
-            var CellnumberMember = new SqlParameter("@CellnumberMember", complaintItem.CellnumberMember);
-
-            var EmailMember = new SqlParameter("@EmailMember", complaintItem.EmailMember);
-
-            var FNameComplainant = new SqlParameter("@FNameComplainant", complaintItem.FNameComplainant);
-
-            var LNameComplainant = new SqlParameter("@LNameComplainant", complaintItem.LNameComplainant);
-
-            var TitleIDComplainant = new SqlParameter("@TitleIDComplainant", complaintItem.TitleIDComplainant);
-
-            var PostalAdressComplainant = new SqlParameter("@PostalAdressComplainant", complaintItem.PostalAdressComplainant);
-
-            var PostalSuburbComplainant = new SqlParameter("@PostalSuburbComplainant", complaintItem.PostalSuburbComplainant);
-           
-            var PostalBuildingComplainant = new SqlParameter("@PostalBuildingComplainant",complaintItem.PostalBuildingComplainant);
-
-            var PostalCodeComplainant = new SqlParameter("@PostalCodeComplainant", complaintItem.PostalCodeComplainant);
-
-            var CityComplainant = new SqlParameter("@CityComplainant", complaintItem.CityComplainant);
-
-            var ProvinceIDComplainant = new SqlParameter("@ProvinceIDComplainant", complaintItem.ProvinceIDComplainant);
-
-            var TelnumberComplainant = new SqlParameter("@TelnumberComplainant", complaintItem.TelnumberComplainant);
-
-            var CellnumberComplainant = new SqlParameter("@CellnumberComplainant", complaintItem.CellnumberComplainant);
-
-            var EmailComplainant = new SqlParameter("@EmailComplainant", complaintItem.EmailComplainant);
-
-            var complaintFacts = new SqlParameter("@complaintFacts", complaintItem.complaintFacts);
-
-            var complaintDisputeResFollowed = new SqlParameter("@complaintDisputeResFollowed", complaintItem.complaintDisputeResFollowed);
-
-            var complaintRecourseRequired = new SqlParameter("@complaintRecourseRequired", complaintItem.complaintRecourseRequired);
-
-           return _context.Database.ExecuteSqlRaw("EXECUTE website.spI_Web_Complaint @EntitypeIDAgainst, @EntityIDAgainst, @BenefitoptionIDAgainst, @EntityTypeIDMember, @EntityIDMember, @MembershipNrMember, @PracticeNameMember, @FNameMember, @LNameMember, @TitleIDMember, @PostalAdressMember, @PostalSuburbMember, @PostalBuildingMember, @PostalCodeMember, @CityMember, @ProvinceIDMember, @TelnumberMember, @CellnumberMember, @EmailMember, @FNameComplainant, @LNameComplainant, @TitleIDComplainant, @PostalAdressComplainant, @PostalCodeMember, @CityMember, @ProvinceIDMember, @TelnumberMember, @CellnumberMember, @EmailMember, @FNameComplainant, @LNameComplainant, @TitleIDComplainant, @PostalAdressComplainant, @PostalSuburbComplainant, @PostalBuildingComplainant, @PostalCodeComplainant, @CityComplainant, @ProvinceIDComplainant, @TelnumberComplainant, @CellnumberComplainant, @EmailComplainant, @complaintFacts, @complaintDisputeResFollowed, @complaintRecourseRequired", EntitypeIDAgainst, EntityIDAgainst, BenefitoptionIDAgainst, EntityTypeIDMember, EntityIDMember, MembershipNrMember, PracticeNameMember, FNameMember, LNameMember, TitleIDMember, PostalAdressMember, PostalSuburbMember, PostalBuildingMember, PostalCodeMember, CityMember, ProvinceIDMember, TelnumberMember, CellnumberMember, EmailMember, FNameComplainant, LNameComplainant, TitleIDComplainant, PostalAdressComplainant, PostalCodeMember, CityMember, ProvinceIDMember, TelnumberMember, CellnumberMember, EmailMember, FNameComplainant, LNameComplainant, TitleIDComplainant, PostalAdressComplainant, PostalSuburbComplainant, PostalBuildingComplainant, PostalCodeComplainant, CityComplainant, ProvinceIDComplainant, TelnumberComplainant, CellnumberComplainant, EmailComplainant, complaintFacts, complaintDisputeResFollowed, complaintRecourseRequired);
-
+                return lowerCase ? builder.ToString().ToLower() : builder.ToString();
+            }
         }
 
         [HttpGet("against-categories")]
@@ -112,11 +167,11 @@ namespace CMSLookupApi.Controllers
         {
             return await _context.ProvinceData.FromSqlRaw("EXECUTE website.spGet_Province").ToListAsync();
         }
-      
+
         [HttpGet("sp-scheme-benefit-options/{entityid}")]
         public async Task<ActionResult<IEnumerable<SchemeBenefitOptionsItem>>> GetSpSchemeBenefitOptions(int entityid)
         {
-            return await _context.SchemeBenefitOptions.FromSqlRaw("EXECUTE website.spGet_SchemeBenefitoptions @entityid", new SqlParameter("@entityid",entityid)).ToListAsync();
+            return await _context.SchemeBenefitOptions.FromSqlRaw("EXECUTE website.spGet_SchemeBenefitoptions @entityid", new SqlParameter("@entityid", entityid)).ToListAsync();
         }
 
         [HttpGet("sp-title")]
@@ -128,7 +183,14 @@ namespace CMSLookupApi.Controllers
         [HttpGet("entity-list-by-category/{entitytypeid}")]
         public async Task<ActionResult<IEnumerable<EntityListItem>>> GetEntityListByCategory(int entitytypeid)
         {
-            return await _context.EntityList.FromSqlRaw("EXECUTE website.spGet_EntityList_ByCategory @entitytypeid", new SqlParameter("@entitytypeid",entitytypeid)).ToListAsync();
+            return await _context.EntityList.FromSqlRaw("EXECUTE website.spGet_EntityList_ByCategory @entitytypeid", new SqlParameter("@entitytypeid", entitytypeid)).ToListAsync();
+        }
+
+        [HttpGet("complaint-status/{complaintId}")]
+        public async Task<ActionResult<IEnumerable<ComplaintStatusItem>>> GetComplaintStatus(int complaintId) {
+
+            return await _context.ComplaintStatus.FromSqlRaw("EXECUTE website.spGet_Complaint_Status @complaintid;", new SqlParameter("@complaintid", complaintId)).ToListAsync();
+            
         }
     }
 }

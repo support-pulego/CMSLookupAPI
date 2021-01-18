@@ -132,6 +132,8 @@ C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Debug\netcoreapp3.1\ru
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.csproj.CoreCompileInputs.cache
+C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.AssemblyInfoInputs.cache
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.AssemblyInfo.cs
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.RazorTargetAssemblyInfo.cache
@@ -141,6 +143,4 @@ C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\st
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.dll
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.pdb
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.genruntimeconfig.cache
-C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.csproj.CoreCompileInputs.cache
-C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ramcy\source\repos\CMSLookupApi\CMSLookupApi\obj\Debug\netcoreapp3.1\CMSLookupApi.csprojAssemblyReference.cache
